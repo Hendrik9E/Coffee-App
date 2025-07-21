@@ -1,0 +1,91 @@
+ion-toolbar {
+  --background: #884531; 
+  --color: white;
+}
+
+.home-content {
+  --background: #ffffff; 
+  background-color: #ffffff; 
+  padding: 10px;
+}
+
+ion-card {
+  margin: 12px 0;
+  background-color: #ffffff !important;
+  color: #333;
+  box-shadow: none !important;
+  border: 1px solid #e0e0e0;
+}
+
+ion-list {
+  background: #ffffff !important;
+}
+
+ion-content {
+  --background: #ffffff !important;
+  background: #ffffff !important;
+}
+
+.flavour-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-color: #666;
+  background-color: #ffffff;
+
+}
+
+.flavour-text {
+  flex: 1;
+}
+
+.flavour-text h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #884531;
+  font-weight: bold;
+}
+
+.flavour-text p {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0;
+}
+
+.flavour-actions ion-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #884531;
+  cursor: pointer;
+}
+
+.flavour-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.instructions {
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+  margin: 30px 20px;
+}
+
+.heading {
+  align-items: center;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #ffffff;
+}
+
+.list{
+  background-color: #ffffff;
+}

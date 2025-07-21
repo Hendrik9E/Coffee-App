@@ -1,0 +1,20 @@
+<ion-content class="login-page">
+  <div class="login-container">
+    <img src="assets/LogoIcon.svg" class="coffee-cup" alt="Coffee Logo" />
+
+    <h1 class="login-title">LOGIN</h1>
+
+    <ion-item class="input-underline">
+      <ion-input [(ngModel)]="username" type="text" placeholder="USERMANE"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-underline">
+      <ion-input [(ngModel)]="password" type="password" placeholder="PASSWORD"></ion-input>
+    </ion-item>
+</div>
+    <ion-button class="login-button" fill="clear"  (click)="onLogin()">
+       <img class="login-button img" src="assets/buttonLogin.svg" alt="Log In" />
+    </ion-button>
+  
+</ion-content>
+

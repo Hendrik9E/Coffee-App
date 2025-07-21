@@ -1,0 +1,77 @@
+.login-page {
+  --background: #8A4B38;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+.coffee-cu {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.login-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  color: white;
+}
+
+.input-item {
+  margin: 10px 0;
+  background: transparent;
+  --highlight-color-focused: white;
+  --color: white;
+}
+
+ion-input::part(native-input) {
+  color: white;
+}
+
+.login-instructions {
+  margin-top: 20px;
+  font-size: 13px;
+  color: white;
+}
+
+.login-button {
+  border-top: 20px;
+  font-size: 5px;
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 0;
+  margin-top: 30px;
+  height: auto; 
+  width: auto;  
+}
+
+.input-new {
+  background: none;
+  border: none;
+}
+
+.login-button img {
+  width: 80px;
+  height: auto;
+}
+
+.input-underline {
+  --background: transparent;
+  --color: white;
+  border-bottom: 1px solid white;
+  margin: 10px 0;
+}

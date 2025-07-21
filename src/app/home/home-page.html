@@ -1,0 +1,40 @@
+<ion-header color="#8A4B38">
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-button (click)="syncData()">
+        <ion-icon src="assets/iconSync.svg" name="sync"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="heading">COFFEE FLAVOURS</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="onAdd()">
+        <ion-icon src="assets/iconAdd.svg" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<div class="content-wrapper">
+
+<ion-content class="home-content">
+  <ion-list class="list">
+    <ion-card *ngFor="let flavour of flavours">
+      <ion-card-content class="flavour-card">
+        <div class="flavour-text">
+          <h2>{{ flavour.Name }}</h2>
+          <p>{{ flavour.Barcode }}</p>
+
+          <div class="flavour-actions">
+            <ion-icon src="assets/iconEdit.svg" ></ion-icon>
+            <ion-icon src="assets/iconDelete.svg" ></ion-icon>
+          </div>
+        </div>
+
+        <img src="assets/risetto.png" class="flavour-image" />
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>
