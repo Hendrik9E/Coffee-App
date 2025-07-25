@@ -1,68 +1,70 @@
 <ion-content class="manage-page" [fullscreen]="true">
   <div class="content-wrapper">
-<ion-header color="#8A4B38">
-  <ion-toolbar >
-    <ion-buttons slot="start">
-     <ion-button (click)="goBack()">
-  <ion-icon src="assets/iconBack.svg"></ion-icon>
-</ion-button>
-    </ion-buttons>
+    <ion-header color="#8A4B38">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="goBack()">
+            <ion-icon src="assets/iconBack.svg"></ion-icon>
+          </ion-button>
+        </ion-buttons>
 
-    <ion-title class="heading">COFFEE FLAVOURS</ion-title>
+        <ion-title class="heading">
+          {{ isEditMode ? 'Edit Flavour' : 'Manage Flavours' }}
+        </ion-title>
 
-    <ion-buttons slot="end">
-      <ion-button (click)="onAdd()">
-        <ion-icon src="assets/iconScan.svg" name="add"></ion-icon>
+        <ion-buttons slot="end">
+          <ion-button (click)="isEditMode ? onUpdate() : onAdd()">
+            <ion-icon src="assets/iconScan.svg"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <div class="barcode-wrapper">
+      <div class="input-section">
+        <label class="barcode-label">BARCODE</label>
+        <ion-item lines="none" class="input-line">
+          <ion-input [(ngModel)]="barcode" type="number" class="input-text"></ion-input>
+        </ion-item>
+      </div>
+      <ion-button fill="clear" class="barcode" (click)="scanBarcode()">
+        <ion-icon src="assets/imagePlaceholder.svg"></ion-icon>
       </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+    </div>
 
-<div class="barcode-wrapper">
-  <div class="input-section">
-    <label class="barcode-label">BARCODE</label>
-    <ion-item lines="none" class="input-line">
-      <ion-input [(ngModel)]="barcode" type="number" class="input-text"></ion-input>
-    </ion-item>
-  </div>
-  <ion-button fill="clear" class="barcode" (click)="scanBarcode()">
-    <ion-icon src="assets/imagePlaceholder.svg"></ion-icon>
-  </ion-button>
-</div>
+    <div class="input-div">
+      <label class="input-label">FLAVOUR NAME</label>
+      <ion-item lines="none" class="input-line">
+        <ion-input [(ngModel)]="name" class="input-text"></ion-input>
+      </ion-item>
+    </div>
 
-<div class="input-div">
-  <label class="input-label">FLAVOUR NAME</label>
-  <ion-item lines="none" class="input-line">
-    <ion-input [(ngModel)]="name" class="input-text"></ion-input>
-  </ion-item>
-</div>
+    <div class="row">
+      <div class="half">
+        <label class="input-label">PRICE PER BOX</label>
+        <ion-item lines="none" class="input-line">
+          <ion-input type="number" [(ngModel)]="pricePerBox" class="input-text"></ion-input>
+        </ion-item>
+      </div>
 
-<div class="row">
-  <div class="half">
-    <label class="input-label">PRICE PER BOX</label>
-    <ion-item lines="none" class="input-line">
-      <ion-input type="number" [(ngModel)]="pricePerBox" class="input-text"></ion-input>
-    </ion-item>
-  </div>
+      <div class="half">
+        <label class="input-label">PRICE PER POD</label>
+        <ion-item lines="none" class="input-line">
+          <ion-input type="number" [(ngModel)]="pricePerPod" class="input-text"></ion-input>
+        </ion-item>
+      </div>
+    </div>
 
-  <div class="half">
-    <label class="input-label">PRICE PER POD</label>
-    <ion-item lines="none" class="input-line">
-      <ion-input type="number" [(ngModel)]="pricePerPod" class="input-text"></ion-input>
-    </ion-item>
-  </div>
-</div>
+    <div class="input-div">
+      <label class="input-label">PODS PER BOX</label>
+      <ion-item lines="none" class="input-line">
+        <ion-input type="number" [(ngModel)]="podsPerBox" class="input-text"></ion-input>
+      </ion-item>
+    </div>
 
-<div class="input-div">
-  <label class="input-label">PODS PER BOX</label>
-  <ion-item lines="none" class="input-line">
-    <ion-input type="number" [(ngModel)]="podsPerBox" class="input-text"></ion-input>
-  </ion-item>
-</div>
-
-  <div class="add-button-container">
-      <ion-button fill="clear">
-        <img src="assets/iconAdd.svg" alt="Add" />
+    <div class="add-button-container">
+      <ion-button fill="clear" (click)="isEditMode ? onUpdate() : onAdd()">
+        <img [src]="isEditMode ? 'assets/buttonCheck.svg' : 'assets/iconAdd.svg'" alt="Action" />
       </ion-button>
     </div>
   </div>

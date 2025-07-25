@@ -23,12 +23,12 @@
     <ion-card *ngFor="let flavour of flavours">
       <ion-card-content class="flavour-card">
         <div class="flavour-text">
-          <h2>{{ flavour.Name }}</h2>
-          <p>{{ flavour.Barcode }}</p>
+          <h2>{{ flavour.name }}</h2>
+          <p>{{ flavour.barcode }}</p>
 
           <div class="flavour-actions">
-            <ion-icon src="assets/iconEdit.svg" ></ion-icon>
-            <ion-icon src="assets/iconDelete.svg" ></ion-icon>
+            <ion-icon src="assets/iconEdit.svg" (click)="onEdit(flavour)"></ion-icon>
+            <ion-icon src="assets/iconDelete.svg" (click)="onDelete(flavour)"></ion-icon>
           </div>
         </div>
 
@@ -36,5 +36,5 @@
       </ion-card-content>
     </ion-card>
   </ion-list>
-
 </ion-content>
+
